@@ -1,8 +1,8 @@
 package router
 
 import (
-	"schoolmanagement/src/app/internal/auth"
-	"schoolmanagement/src/app/internal/user"
+	"schoolmanagement/internal/auth"
+	"schoolmanagement/internal/user"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -26,7 +26,6 @@ var modulesRoute = []Route{
 
 // SetupRoutes registers all routes to the app
 func Routers(route fiber.Router) {
-	// Register module routes
 	for _, module := range modulesRoute {
 		group := route.Group(module.Path)
 		module.Route(group)
